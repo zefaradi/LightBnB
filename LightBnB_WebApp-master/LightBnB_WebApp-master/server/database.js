@@ -109,7 +109,7 @@ const getAllReservations = function (guest_id, limit = 10) {
       return result.rows;
     })
     .catch((err) => {
-      console.log(err.message);
+      console.log(err.message); 
     })
 }
 exports.getAllReservations = getAllReservations;
