@@ -24,7 +24,7 @@ const getUserWithEmail = function (email) {
   return pool
     .query(`SELECT * FROM users WHERE email = $1`, [email])
     .then((result) => {
-      // console.log(result.rows ? result.rows[0] : null);
+      console.log(result.rows ? result.rows[0] : null);
       return result.rows ? result.rows[0] : null;
     })
     .catch((err) => console.log(err.message));
@@ -142,8 +142,6 @@ const getAllProperties = function (options, limit = 10) {
   ORDER BY cost_per_night
   LIMIT $${queryParams.length};
   `;
-
-  // console.log(queryString, queryParams);
   
   return pool
     .query(queryString, queryParams)
